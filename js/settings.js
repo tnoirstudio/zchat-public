@@ -514,15 +514,11 @@
     }
 
     async function initChangePasscodeUI() {
-        const uname = (localStorage.getItem("zchat_username") || "").trim().toLowerCase();
         if (!changePasscodeBlock) return;
-        // Beta: chỉ elonmusk
-        if (uname !== "elonmusk") {
-            changePasscodeBlock.classList.add("hidden");
+            changePasscodeBlock.classList.remove("hidden");
             return;
-        }
-        changePasscodeBlock.classList.remove("hidden");
     }
+
 
     if (changePasscodeBtn) {
         changePasscodeBtn.addEventListener("click", async () => {
